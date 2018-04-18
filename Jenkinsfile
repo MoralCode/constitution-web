@@ -9,7 +9,7 @@ node('jenkins-slave-latex-centos7') {
             sh "mv bylaws.pdf ../bylaws.pdf"
         }
 
-	sh ls -la
+	sh "ls -la"
     }
 
     stage('Start Build') {

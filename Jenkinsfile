@@ -10,10 +10,6 @@ node('jenkins-slave-latex-centos7') {
         git url: "https://github.com/ComputerScienceHouse/constitution-web.git"
     }
 
-    stage('Clean') {
-        sh "rm -rf constitution"
-    }
-
     stage('Start Build') {
         sh "oc start-build constitution-web --from-dir=./"
     }

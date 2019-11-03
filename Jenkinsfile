@@ -5,8 +5,7 @@ node('jenkins-slave-latex-centos7') {
 	dir('constitution') {
             git url: 'https://github.com/ComputerScienceHouse/Constitution.git'
             sh "make"
-            sh "mv articles.pdf ../articles.pdf"
-            sh "mv bylaws.pdf ../bylaws.pdf"
+            sh "mv constitution.pdf ../articles.pdf"
         }
 
 	sh "rm -rf constitution"

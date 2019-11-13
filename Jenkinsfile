@@ -9,7 +9,14 @@ node('jenkins-slave-latex-centos7') {
             sh "mv bylaws.pdf ../bylaws.pdf"
         }
 
+        dir('codeofconduct') {
+            git url: 'https://github.com/ComputerScienceHouse/CodeOfConduct.git'
+            sh "pdflatex csh-coc.tex"
+            sh "mv csh-coc.pdf ../csh-coc.pdf"
+        }
+
 	sh "rm -rf constitution"
+    sh "rm -rf codeofconduct"
     }
 
     stage('Start Build') {
